@@ -1,0 +1,42 @@
+{
+  "database_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "myappdb"
+  },
+  "eks_cluster_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://CB928C1ADA54A47E5F99871E723C0DA4.gr7.ap-south-1.eks.amazonaws.com"
+  },
+  "eks_cluster_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "infraops-eks-prod"
+  },
+  "eks_cluster_version": {
+    "sensitive": false,
+    "type": "string",
+    "value": "1.29"
+  },
+  "rds_address": {
+    "sensitive": false,
+    "type": "string",
+    "value": "infraops-postgres-prod.ctuegeggce3i.ap-south-1.rds.amazonaws.com"
+  },
+  "rds_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "infraops-postgres-prod.ctuegeggce3i.ap-south-1.rds.amazonaws.com:5432"
+  },
+  "rds_port": {
+    "sensitive": false,
+    "type": "number",
+    "value": 5432
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-0d4bba6fb22096515"
+  }
+}

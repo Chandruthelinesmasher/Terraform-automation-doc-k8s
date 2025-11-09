@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: titan-website
+  namespace: myapp
+  labels:
+    app: titan-website
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: titan-website
+  template:
+    metadata:
+      labels:
+        app: titan-website
+    spec:
+      containers:
+        - name: titan-website
+          image: chandrulinesmasher/titan-website:v1
+          ports:
+            - containerPort: 80
