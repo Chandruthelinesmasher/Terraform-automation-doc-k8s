@@ -170,7 +170,7 @@ jobs:
 
     - name: Wait for deployment rollout
       run: |
-        kubectl rollout status deployment/$(yq eval '.metadata.name' k8s/deployment.yaml) \
+        kubectl rollout status deployment/$(yq eval '.metadata.name' app/k8s/deployment.yaml) \
           -n production --timeout=5m
 
     - name: Verify deployment
