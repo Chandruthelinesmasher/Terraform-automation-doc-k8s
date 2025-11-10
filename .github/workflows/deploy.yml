@@ -23,7 +23,7 @@ concurrency:
 env:
   AWS_REGION: ap-south-1
   TERRAFORM_VERSION: 1.6.6
-  CLUSTER_NAME: titan-cluster
+  CLUSTER_NAME: infraops-eks-prod
 
 jobs:
   terraform:
