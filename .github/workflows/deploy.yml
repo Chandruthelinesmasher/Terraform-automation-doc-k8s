@@ -165,8 +165,8 @@ jobs:
 
     - name: Deploy application
       run: |
-        kubectl apply -f k8s/deployment.yaml -n production
-        kubectl apply -f k8s/service.yaml -n production
+        kubectl apply -f app/k8s/deployment.yaml -n production
+        kubectl apply -f app/k8s/service.yaml -n production
 
     - name: Wait for deployment rollout
       run: |
