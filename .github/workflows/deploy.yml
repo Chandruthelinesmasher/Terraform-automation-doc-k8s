@@ -34,14 +34,20 @@ jobs:
       with:
         terraform_version: 1.6.6
 
+    - name: Start timer
+      run: echo "Terraform apply started at: $(date)"
+
     - name: Terraform Init & Apply
       working-directory: envs/prod
       run: |
         terraform init -input=false
-        terraform apply -auto-approve \
+        terraform apply -auto-approve -parallelism=20 \
           -var="aws_region=ap-south-1" \
           -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" \
           -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+
+    - name: End timer
+      run: echo "Terraform apply ended at: $(date)"
 
     - name: Update kubeconfig
       run: |
