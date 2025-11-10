@@ -165,12 +165,12 @@ jobs:
 
     - name: Deploy application
       run: |
-        kubectl apply -f app/deployment.yaml -n production
-        kubectl apply -f app/service.yaml -n production
+        kubectl apply -f k8s/deployment.yaml -n production
+        kubectl apply -f k8s/service.yaml -n production
 
     - name: Wait for deployment rollout
       run: |
-        kubectl rollout status deployment/$(yq eval '.metadata.name' app/deployment.yaml) \
+        kubectl rollout status deployment/$(yq eval '.metadata.name' k8s/deployment.yaml) \
           -n production --timeout=5m
 
     - name: Verify deployment
